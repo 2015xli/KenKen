@@ -325,14 +325,27 @@ class Kenken{
                     switch(O){
                     case '+': op = Op.ADD; break;
                     case '-': op = Op.SUB; break;
+                    case 'x':
+                    case 'X':
                     case '*': op = Op.MUL; break;
                     case '/': op = Op.DIV; break;
-                    default: assert(false);
+                    default: 
+                            System.out.println( O + " is not a correct operator\n");
+                            assert(false);
                     }
                 }
                 assert(op != null);	
                 ArrayList<Point> points = map.get(A);
                 assert(points!=null);
+                
+                if( op == Op.NOP && points.size() != 1) {
+                   System.out.println( line + " should have an operator");
+                }
+
+                if( op != Op.NOP && points.size() == 1) {
+                   System.out.println( line + " should have no operator");
+                }
+                
                 Piece p = new Piece(op, num, points);
                 //p.output();
                 prob.add(p);
