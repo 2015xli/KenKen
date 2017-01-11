@@ -1,4 +1,6 @@
-# A simple solver for KenKen (KenDoku) 
+# A fast solver for KenKen (KenDoku) 
+
+This project is designed for efficiency in both speed and memory.
  
  For SuDoKu solutions, input an integer that represents the matrix size, such as:
  ```java
